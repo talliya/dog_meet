@@ -28,15 +28,34 @@
 <a href="#" onclick="window.open('http://www.facebook.com', '_system');">www.facebook.com</a>
 <a href="#" onclick="window.open('http://www.facebook.com', '_system');">www.facebook.com</a>
 <a href="#" onclick="http://www.google.com/');">http://www.google.com/</a>
+<button class="ext-link" href="http://www.google.com/">Google it</button>
 	
 <script>	
-	$("#ext-link").on("click"), function() {
+iaEvent = "click";
+if (typeof navigator !== "undefined" && navigator.app) {
+   iaEvent = "tap";
+}
+$('.ext-link').each.bind(iaEvent, function() {
     if (typeof navigator !== "undefined" && navigator.app) {
         // Mobile device.
-        navigator.app.loadUrl('http://www.google.com/', {openExternal: true});
+        var linktarget = this.attr("href");
+        navigator.app.loadUrl(linktarget, {openExternal: true});
     } else {
         // Possible web browser
-        window.open("http://www.google.com/", "_blank");
+        window.open(linktarget, "_blank");
+    }
+});iaEvent = "click";
+if (typeof navigator !== "undefined" && navigator.app) {
+   iaEvent = "tap";
+}
+$('.ext-link').each.bind(iaEvent, function() {
+    if (typeof navigator !== "undefined" && navigator.app) {
+        // Mobile device.
+        var linktarget = this.attr("href");
+        navigator.app.loadUrl(linktarget, {openExternal: true});
+    } else {
+        // Possible web browser
+        window.open(linktarget, "_blank");
     }
 });
 	</script>
