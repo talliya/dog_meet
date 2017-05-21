@@ -8,8 +8,7 @@
 <splash src="splash.png" platform="android" />
 
 <access origin="*" />         
-        <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
-<access origin="*" browserOnly="true" />
+
 
 
  <name>DogTest New Test</name>
