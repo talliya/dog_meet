@@ -22,15 +22,23 @@
 
 <a onclick="navigator.app.loadUrl('https://google.com/', { openExternal:true });">Link</a>
 	<a href="http://www.twitter.com" target = "_blank">Twitter</a>
-	 meteor add cordova:org.apache.cordova.inappbrowser@0.5.4
 
 
+
+<a href="#" onclick="window.open('http://www.facebook.com', '_system');">www.facebook.com</a>
 <a href="#" onclick="window.open('http://www.facebook.com', '_system');">www.facebook.com</a>
 	
-
-
-
-<a href="#" onclick="window.open('http://www.facebook.com', '_system');">www.facebook.com</a>
+<script>	
+	$("#ext-link").on("click"), function() {
+    if (typeof navigator !== "undefined" && navigator.app) {
+        // Mobile device.
+        navigator.app.loadUrl('http://www.google.com/', {openExternal: true});
+    } else {
+        // Possible web browser
+        window.open("http://www.google.com/", "_blank");
+    }
+});
+	</script>
 	
 </body>
 </html>
